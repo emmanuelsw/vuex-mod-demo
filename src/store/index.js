@@ -10,10 +10,12 @@ export default new Vuex.Store({
     order: order
   },
   state: {
-
+    currentStep: ''
   },
   mutations: {
-
+    setStep(state, step) {
+      state.currentStep = step
+    }
   },
   actions: {
 
