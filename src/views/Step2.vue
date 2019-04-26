@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="card">
-        <h6 class="card-header">Seleccione la subcategoria</h6>
+        <h6 class="card-header">Seleccionar subcategoria</h6>
         <div class="card-body">
           <div class="row">
             <div v-for="(category, index) in categories" :key="index" class="col">

@@ -246,6 +246,7 @@ export default {
 }
 
 .card.bg-dark:hover {
-  background-color: #34495e !important;
+  background-color: #ecf0f1 !important;
+  color: #000 !important;
 }
 </style>
