@@ -88,7 +88,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h2 class="h4">New Order</h2>
+            <h2 class="h5">Nuevo Pedido</h2>
           </div>
           <router-view/>
         </main>
@@ -113,6 +113,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.input-group .feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
 }
 
 .feather {
@@ -228,5 +234,18 @@ export default {
 
 .pointer {
   cursor: pointer;
+}
+
+.list-detail {
+  padding-inline-start: 0px;
+  margin-bottom: 0;
+}
+
+.list-detail li {
+  list-style: none;
+}
+
+.card.bg-dark:hover {
+  background-color: #34495e !important;
 }
 </style>
