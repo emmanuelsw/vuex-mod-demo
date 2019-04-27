@@ -10,7 +10,10 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><span data-feather="user"></span></span>
                 </div>
-                <input type="text" class="form-control" placeholder="Nombre cliente">
+                <select @change="setId" v-model="customer" class="custom-select">
+                  <option :value="{}" disabled selected>Nombre Cliente</option>
+                  <option v-for="(customer, index) in customers" :key="index" :value="customer">{{ customer.name }}</option>
+                </select>
               </div>
             </div>
             <div class="col">
@@ -18,7 +21,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><span data-feather="hash"></span></span>
                 </div>
-                <input type="text" class="form-control" placeholder="Código cliente">
+                <input type="text" class="form-control id" placeholder="Código cliente">
               </div>
             </div>
           </div>
@@ -44,13 +47,28 @@
 <script>
 export default {
   name: 'Step3',
+  data() {
+    return {
+      customer: {},
+      customers: [
+        { id: '85485', name: 'Pepito Sanchez' },
+        { id: '96541', name: 'John Doe' },
+        { id: '12862', name: 'Juanito Perez' },
+        { id: '84221', name: 'Bob Smith' },
+      ]
+    }
+  },
   mounted() {
     // eslint-disable-next-line
     feather.replace()
   },
   methods: {
     setStep(step) {
+      this.$store.commit('setCustomer', this.customer)
       this.$store.commit('setStep', step)
+    },
+    setId() {
+      document.querySelector('.id').value = this.customer.id
     }
   }
 }

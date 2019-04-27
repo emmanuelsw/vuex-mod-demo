@@ -6,7 +6,7 @@
         <div class="card-body">
           <div class="row">
             <div v-for="(category, index) in categories" :key="index" class="col">
-              <div @click="setStep('Step3')" class="card pointer text-white bg-dark mb-3">
+              <div @click="setCategory(category)" class="card pointer text-white bg-dark mb-3">
                 <div class="card-body">
                   <p class="card-text text-center">{{ category }}</p>
                 </div>
@@ -33,6 +33,10 @@ export default {
   methods: {
     setStep(step) {
       this.$store.commit('setStep', step)
+    },
+    setCategory(category) {
+      this.$store.commit('setCategory', category)
+      this.setStep('Step3')
     }
   }
 }
