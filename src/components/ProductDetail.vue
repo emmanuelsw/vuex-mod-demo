@@ -3,14 +3,14 @@
     <div class="card">
       <div class="card-body">
         <ul class="list-detail">
-          <li><b># Order:</b></li>
-          <li><b>Descripción:</b></li>
-          <li><b>Código:</b></li>
-          <li><b>Cantidad:</b></li>
-          <li><b>Descuento:</b></li>
-          <li><b>Valor Unitario:</b></li>
-          <li><b>Valor Descuento:</b></li>
-          <li><b>Valor Total:</b></li>
+          <li><b># Order:</b> {{ product.orderId }}</li>
+          <li><b>Descripción:</b> {{ product.name }}</li>
+          <li><b>Código:</b> {{ product.code }}</li>
+          <li><b>Cantidad:</b> {{ product.quantity }}</li>
+          <li><b>Descuento:</b> {{ product.discount }}</li>
+          <li><b>Valor Unitario:</b> ${{ product.unitValue }}</li>
+          <li><b>Valor Descuento:</b> ${{ product.discountValue }}</li>
+          <li><b>Valor Total:</b> ${{ product.totalValue }}</li>
         </ul>
       </div>
       <div class="card-footer">
@@ -33,11 +33,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'ProductDetail',
   mounted() {
     // eslint-disable-next-line
     feather.replace()
   },
+  computed: {
+    ...mapState({
+      product: state => state.order.product
+    })
+  }
 }
 </script>

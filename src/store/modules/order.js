@@ -1,11 +1,25 @@
+import { getField, updateField } from 'vuex-map-fields'
+
 const state = {
   category: '',
   customer: {},
+  product: {
+    orderId: '',
+    name: '',
+    code: '',
+    quantity: '',
+    discount: '',
+    kiloValue: '',
+    date: '',
+    unitValue: 0,
+    discountValue: 0,
+    totalValue: 0,
+  },
   order: {}
 }
 
 const getters = {
-
+  getField
 }
 
 const actions = {
@@ -18,7 +32,12 @@ const mutations = {
   },
   setCustomer(state, customer) {
     state.customer = customer
-  }
+  },
+  setNameCode(state, payload) {
+    state.product.name = payload.name
+    state.product.code = payload.code
+  },
+  updateField
 }
 
 export default {
