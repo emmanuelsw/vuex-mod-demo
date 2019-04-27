@@ -21,20 +21,20 @@
           <div class="form-row mt-3">
             <div class="col">
               <button type="button" class="btn btn-danger btn-block">
-                <span data-feather="x-square"></span> 
+                <feather type="x-square"></feather>
                 Cancelar Pedido
               </button>
             </div>
             <div class="col">
               <button @click="setStep('Step3')" type="button" class="btn btn-info btn-block">
-                <span data-feather="arrow-left"></span> 
+                <feather type="arrow-left"></feather>
                 Volver
               </button>
             </div>
             <div class="col">
               <button type="button" class="btn btn-success btn-block">
                 Enviar Pedido 
-                <span data-feather="send"></span>
+                <feather type="send"></feather>
               </button>
             </div>
           </div>
@@ -57,10 +57,6 @@ export default {
     ProductForm,
     ProductDetail,
     OrderDetail
-  },
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
   },
   computed: {
     ...mapState({

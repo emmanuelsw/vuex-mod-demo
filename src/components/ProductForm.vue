@@ -7,14 +7,14 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="file-text"></span></span>
+          <span class="input-group-text"><feather type="file-text"></feather></span>
         </div>
         <input v-model="orderId" type="text" class="form-control" placeholder="Order de compra">
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="archive"></span></span>
+          <span class="input-group-text"><feather type="archive"></feather></span>
         </div>
         <select v-model="name" class="custom-select">
           <option :value="{name: '', code: ''}" disabled selected>Nombre del articulo</option>
@@ -24,7 +24,7 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="hash"></span></span>
+          <span class="input-group-text"><feather type="hash"></feather></span>
         </div>
         <select v-model="code" class="custom-select">
           <option :value="{name: '', code: ''}" disabled selected>Código del producto</option>
@@ -34,31 +34,31 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="layers"></span></span>
+          <span class="input-group-text"><feather type="layers"></feather></span>
         </div>
         <input v-model="quantity" type="text" class="form-control" placeholder="Cantidad">
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="dollar-sign"></span></span>
+          <span class="input-group-text"><feather type="dollar-sign"></feather></span>
         </div>
         <input v-model="kiloValue" type="text" class="form-control" placeholder="Valor kilo">
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="arrow-down"></span></span>
+          <span class="input-group-text"><feather type="arrow-down"></feather></span>
         </div>
         <input v-model="discount" type="text" class="form-control" placeholder="Descuento">
         <div class="input-group-append">
-          <span class="input-group-text"><span data-feather="percent"></span></span>
+          <span class="input-group-text"><feather type="percent"></feather></span>
         </div>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text"><span data-feather="calendar"></span></span>
+          <span class="input-group-text"><feather type="calendar"></feather></span>
         </div>
         <input v-model="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
       </div>
@@ -81,10 +81,6 @@ export default {
         { code: '684221', name: 'LAM SENCILLA 0K ESP' },
       ]
     }
-  },
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
   },
   computed: {
     ...mapFields([

@@ -12,7 +12,9 @@ const state = {
     kiloValue: null,
     date: ''
   },
-  order: {}
+  order: {
+    products: []
+  }
 }
 
 const getters = {
@@ -31,7 +33,14 @@ const getters = {
 }
 
 const actions = {
-
+  addProductToOrder({ state, getters, commit }) {
+    const product = {
+      ...state.product,
+      unitValue: getters.unitValue,
+      totalValue: getters.totalValue
+    }
+    commit('setProductToOrder', product)
+  }
 }
 
 const mutations = {
@@ -44,6 +53,18 @@ const mutations = {
   setNameCode(state, payload) {
     state.product.name = payload.name
     state.product.code = payload.code
+  },
+  setProductToOrder(state, payload) {
+    state.order.products.push(payload)
+    state.product = {
+      orderId: '',
+      name: '',
+      code: '',
+      quantity: null,
+      discount: null,
+      kiloValue: null,
+      date: ''
+    }
   },
   updateField
 }

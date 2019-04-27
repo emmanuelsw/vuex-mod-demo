@@ -8,7 +8,7 @@
             <div class="col">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><span data-feather="user"></span></span>
+                  <span class="input-group-text"><feather type="user"></feather></span>
                 </div>
                 <select @change="setId" v-model="customer" class="custom-select">
                   <option :value="{}" disabled selected>Nombre Cliente</option>
@@ -19,7 +19,7 @@
             <div class="col">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><span data-feather="hash"></span></span>
+                  <span class="input-group-text"><feather type="hash"></feather></span>
                 </div>
                 <input type="text" class="form-control id" placeholder="Código cliente">
               </div>
@@ -34,7 +34,7 @@
             <div class="col">
               <button @click="setStep('Step4')" type="button" class="btn btn-success btn-block">
                 Comenzar Pedido&nbsp;
-                <span data-feather="arrow-right-circle"></span>
+                <feather type="arrow-right-circle"></feather>
               </button>
             </div>
           </div>
@@ -57,10 +57,6 @@ export default {
         { id: '84221', name: 'Bob Smith' },
       ]
     }
-  },
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
   },
   methods: {
     setStep(step) {

@@ -18,37 +18,37 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="home"></span>
+                  <feather type="home"></feather>
                   Dashboard
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#">
-                  <span data-feather="file"></span>
+                  <feather type="file"></feather>
                   Orders
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
+                  <feather type="shopping-cart"></feather>
                   Products
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
+                  <feather type="users"></feather>
                   Customers
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
+                  <feather type="bar-chart-2"></feather>
                   Reports
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
+                  <feather type="layers"></feather>
                   Integrations
                 </a>
               </li>
@@ -60,25 +60,25 @@
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
+                  <feather type="file-text"></feather>
                   Current month
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
+                  <feather type="file-text"></feather>
                   Last quarter
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
+                  <feather type="file-text"></feather>
                   Social engagement
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
+                  <feather type="file-text"></feather>
                   Year-end sale
                 </a>
               </li>
@@ -97,16 +97,6 @@
 
   </div>
 </template>
-
-<script>
-export default {
-  name: 'app',
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
-  }
-}
-</script>
 
 <style>
 #app {

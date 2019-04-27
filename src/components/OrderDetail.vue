@@ -13,8 +13,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-if="!orderProducts">
             <td colspan="5" class="text-center">No hay ordenes para mostrar.</td>
+          </tr>
+          <tr v-for="(product, index) in orderProducts" :key="index">
+            <td>{{ product.orderId }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.unitValue }}</td>
+            <td>{{ product.totalValue }}</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-sm">
+                <feather type="settings"></feather>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -26,11 +37,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'OrderDetail',
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
-  },
+  computed: {
+    ...mapState({
+      orderProducts: state => state.order.order.products
+    })
+  }
 }
 </script>

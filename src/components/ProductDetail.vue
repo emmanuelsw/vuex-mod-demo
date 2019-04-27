@@ -14,8 +14,8 @@
         </ul>
       </div>
       <div class="card-footer">
-        <button type="button" class="btn btn-success btn-block">
-          <span data-feather="plus"></span> 
+        <button @click="addToOrder" type="button" class="btn btn-success btn-block">
+          <feather type="plus"></feather> 
           Agregar
         </button>
       </div>
@@ -37,10 +37,6 @@ import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'ProductDetail',
-  mounted() {
-    // eslint-disable-next-line
-    feather.replace()
-  },
   computed: {
     ...mapGetters([
       'unitValue',
@@ -50,6 +46,11 @@ export default {
     ...mapState({
       product: state => state.order.product
     })
+  },
+  methods: {
+    addToOrder() {
+      this.$store.dispatch('addProductToOrder')
+    }
   }
 }
 </script>
