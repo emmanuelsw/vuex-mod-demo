@@ -7,18 +7,26 @@ const state = {
     orderId: '',
     name: '',
     code: '',
-    quantity: '',
-    discount: '',
-    kiloValue: '',
-    date: '',
-    unitValue: 0,
-    discountValue: 0,
-    totalValue: 0,
+    quantity: null,
+    discount: null,
+    kiloValue: null,
+    date: ''
   },
   order: {}
 }
 
 const getters = {
+  unitValue: state => {
+    return Number(state.product.kiloValue) || 0
+  },
+  discountValue: (state, getters) => {
+    const total = getters.unitValue * state.product.quantity || 0
+    const discountTotal = total * state.product.discount / 100
+    return discountTotal
+  },
+  totalValue: (state, getters) => {
+    return getters.unitValue * state.product.quantity - getters.discountValue
+  },
   getField
 }
 

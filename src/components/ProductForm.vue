@@ -17,7 +17,7 @@
           <span class="input-group-text"><span data-feather="archive"></span></span>
         </div>
         <select v-model="name" class="custom-select">
-          <option value="" disabled selected>Nombre del articulo</option>
+          <option :value="{name: '', code: ''}" disabled selected>Nombre del articulo</option>
           <option v-for="(product, index) in products" :key="index" :value="product">{{ product.name }}</option>
         </select>
       </div>
@@ -27,7 +27,7 @@
           <span class="input-group-text"><span data-feather="hash"></span></span>
         </div>
         <select v-model="code" class="custom-select">
-          <option value="" disabled selected>Código del producto</option>
+          <option :value="{name: '', code: ''}" disabled selected>Código del producto</option>
           <option v-for="(product, index) in products" :key="index" :value="product">{{ product.code }}</option>
         </select>
       </div>

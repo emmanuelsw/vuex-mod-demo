@@ -8,9 +8,9 @@
           <li><b>Código:</b> {{ product.code }}</li>
           <li><b>Cantidad:</b> {{ product.quantity }}</li>
           <li><b>Descuento:</b> {{ product.discount }}</li>
-          <li><b>Valor Unitario:</b> ${{ product.unitValue }}</li>
-          <li><b>Valor Descuento:</b> ${{ product.discountValue }}</li>
-          <li><b>Valor Total:</b> ${{ product.totalValue }}</li>
+          <li><b>Valor Unitario:</b> ${{ unitValue }}</li>
+          <li><b>Valor Descuento:</b> ${{ discountValue }}</li>
+          <li><b>Valor Total:</b> ${{ totalValue }}</li>
         </ul>
       </div>
       <div class="card-footer">
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'ProductDetail',
@@ -42,6 +42,11 @@ export default {
     feather.replace()
   },
   computed: {
+    ...mapGetters([
+      'unitValue',
+      'discountValue',
+      'totalValue'
+    ]),
     ...mapState({
       product: state => state.order.product
     })
