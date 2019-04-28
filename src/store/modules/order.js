@@ -66,6 +66,9 @@ const mutations = {
       date: ''
     }
   },
+  removeProduct(state, index) {
+    state.order.products.splice(index, 1)
+  },
   updateField
 }
 

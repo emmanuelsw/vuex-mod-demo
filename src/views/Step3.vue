@@ -29,7 +29,10 @@
         <div class="card-footer text-muted">
           <div class="form-row">
             <div class="col">
-              <button @click="setStep('Step2')" type="button" class="btn btn-info btn-block">Volver</button>
+              <button @click="setStep('Step2')" type="button" class="btn btn-info btn-block">
+                <feather type="arrow-left"></feather> 
+                Volver
+              </button>
             </div>
             <div class="col">
               <button @click="setStep('Step4')" type="button" class="btn btn-success btn-block">

@@ -60,7 +60,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><feather type="calendar"></feather></span>
         </div>
-        <input v-model="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
+        <input v-model="date" type="date" class="form-control" placeholder="dd/mm/yyyy">
       </div>
 
     </div>

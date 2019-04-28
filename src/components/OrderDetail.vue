@@ -22,8 +22,9 @@
             <td>{{ product.unitValue }}</td>
             <td>{{ product.totalValue }}</td>
             <td>
-              <button type="button" class="btn btn-secondary btn-sm">
-                <feather type="settings"></feather>
+              <button @click="removeProduct(index)" type="button" class="btn btn-danger btn-sm">
+                <feather type="trash-2"></feather> 
+                Eliminar
               </button>
             </td>
           </tr>
@@ -45,6 +46,11 @@ export default {
     ...mapState({
       orderProducts: state => state.order.order.products
     })
+  },
+  methods: {
+    removeProduct(index) {
+      this.$store.commit('removeProduct', index)
+    }
   }
 }
 </script>

@@ -15,7 +15,10 @@
           </div>
         </div>
         <div class="card-footer text-muted">
-          <button @click="setStep('Step1')" type="button" class="btn btn-info btn-block">Volver</button>
+          <button @click="setStep('Step1')" type="button" class="btn btn-info btn-block">
+            <feather type="arrow-left"></feather> 
+            Volver
+          </button>
         </div>
       </div>
     </div>
