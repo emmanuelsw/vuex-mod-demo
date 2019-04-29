@@ -38,7 +38,7 @@
               </button>
             </div>
             <div class="col">
-              <button @click="setStep('Step4')" type="button" class="btn btn-success btn-block">
+              <button @click="nextStep('Step4')" type="button" class="btn btn-success btn-block">
                 Comenzar Pedido&nbsp;
                 <feather type="arrow-right-circle"></feather>
               </button>
@@ -67,6 +67,9 @@ export default {
   },
   methods: {
     setStep(step) {
+      this.$store.commit('setStep', step)
+    },
+    nextStep(step) {
       if (Object.keys(this.customer).length === 0) {
         this.error = true
         return
