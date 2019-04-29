@@ -9,7 +9,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><feather type="file-text"></feather></span>
         </div>
-        <input v-model="orderId" type="text" class="form-control" placeholder="Order de compra">
+        <input v-model="orderId" type="text" :class="{'is-invalid': errors.orderId}" class="form-control" placeholder="Order de compra">
       </div>
 
       <div class="input-group mb-3">
@@ -36,7 +36,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><feather type="layers"></feather></span>
         </div>
-        <input v-model="quantity" type="text" class="form-control" placeholder="Cantidad">
+        <input v-model="quantity" type="text" :class="{'is-invalid': errors.quantity}" class="form-control" placeholder="Cantidad">
       </div>
 
       <div class="input-group mb-3">
@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { mapFields } from 'vuex-map-fields'
 
 export default {
@@ -83,6 +84,9 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      errors: state => state.order.errors
+    }),
     ...mapFields([
       'product.orderId',
       'product.quantity',
