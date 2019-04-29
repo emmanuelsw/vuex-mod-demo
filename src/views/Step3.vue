@@ -6,7 +6,7 @@
         <div class="card-body">
           <div class="form-row">
             <div class="col">
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><feather type="user"></feather></span>
                 </div>
@@ -15,6 +15,9 @@
                   <option v-for="(customer, index) in customers" :key="index" :value="customer">{{ customer.name }}</option>
                 </select>
               </div>
+              <small class="form-text text-danger" v-show="error">
+                Por favor selecciona un cliente.
+              </small>
             </div>
             <div class="col">
               <div class="input-group mb-3">
@@ -53,6 +56,7 @@ export default {
   data() {
     return {
       customer: {},
+      error: false,
       customers: [
         { id: '85485', name: 'Pepito Sanchez' },
         { id: '96541', name: 'John Doe' },
@@ -63,10 +67,15 @@ export default {
   },
   methods: {
     setStep(step) {
+      if (Object.keys(this.customer).length === 0) {
+        this.error = true
+        return
+      }
       this.$store.commit('setCustomer', this.customer)
       this.$store.commit('setStep', step)
     },
     setId() {
+      this.error = false
       document.querySelector('.id').value = this.customer.id
     }
   }

@@ -1,8 +1,10 @@
 import { getField, updateField } from 'vuex-map-fields'
+import { isEmpty, isNumber } from '@/lib/helpers'
 
 const state = {
   category: '',
   customer: {},
+  errors: {},
   product: {
     orderId: '',
     name: '',
@@ -34,6 +36,21 @@ const getters = {
 
 const actions = {
   addProductToOrder({ state, getters, commit }) {
+
+    // Validations
+    if (isEmpty(state.product.orderId)) 
+      commit('setErrors', { orderId: '# de orden no puede estar en blaco.' })
+
+    if (!isNumber(state.product.quantity))
+      commit('setErrors', { quantity: 'Cantidad debe der un número.' })
+
+    if (isEmpty(state.product.quantity))
+      commit('setErrors', { quantity: 'Cantidad no puede estar en blaco.' })
+
+    if (Object.keys(state.errors).length != 0) {
+      return
+    }
+
     const product = {
       ...state.product,
       unitValue: getters.unitValue,
@@ -53,6 +70,9 @@ const mutations = {
   setNameCode(state, payload) {
     state.product.name = payload.name
     state.product.code = payload.code
+  },
+  setErrors(state, error) {
+    state.errors = {...state.errors, ...error}
   },
   setProductToOrder(state, payload) {
     state.order.products.push(payload)
