@@ -19,8 +19,8 @@
           <tr v-for="(product, index) in orderProducts" :key="index">
             <td>{{ product.orderId }}</td>
             <td>{{ product.name }}</td>
-            <td>{{ product.unitValue }}</td>
-            <td>{{ product.totalValue }}</td>
+            <td>{{ product.unitValue | currency }}</td>
+            <td>{{ product.totalValue | currency }}</td>
             <td>
               <button @click="removeProduct(index)" type="button" class="btn btn-danger btn-sm">
                 <feather type="trash-2"></feather> 
