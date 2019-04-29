@@ -31,6 +31,9 @@ const getters = {
   totalValue: (state, getters) => {
     return getters.unitValue * state.product.quantity - getters.discountValue
   },
+  totalOrder: (state) => {
+    return state.order.products.reduce((prev, product) => prev + product.totalValue, 0)
+  },
   getField
 }
 

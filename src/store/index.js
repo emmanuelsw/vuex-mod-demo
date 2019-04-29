@@ -17,8 +17,5 @@ export default new Vuex.Store({
     setStep(state, step) {
       state.currentStep = step
     }
-  },
-  actions: {
-
   }
 })

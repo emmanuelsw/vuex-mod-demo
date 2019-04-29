@@ -8,9 +8,9 @@
           <li><b>Código:</b> {{ product.code }}</li>
           <li><b>Cantidad:</b> {{ product.quantity }}</li>
           <li><b>Descuento:</b> {{ product.discount }}</li>
-          <li><b>Valor Unitario:</b> ${{ unitValue }}</li>
-          <li><b>Valor Descuento:</b> ${{ discountValue }}</li>
-          <li><b>Valor Total:</b> ${{ totalValue }}</li>
+          <li><b>Valor Unitario:</b> {{ unitValue | currency }}</li>
+          <li><b>Valor Descuento:</b> {{ discountValue | currency }}</li>
+          <li><b>Valor Total:</b> {{ totalValue | currency }}</li>
         </ul>
       </div>
       <div class="card-footer">

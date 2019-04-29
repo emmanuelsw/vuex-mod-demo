@@ -31,18 +31,21 @@
         </tbody>
       </table>
       <div class="d-flex justify-content-end">
-        <p class="h5 mb-0"><b>Total:</b> $0</p>
+        <p class="h5 mb-0"><b>Total:</b> {{ totalOrder | currency }}</p>
       </div>
     </div>
   </div>  
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'OrderDetail',
   computed: {
+    ...mapGetters([
+      'totalOrder'
+    ]),
     ...mapState({
       orderProducts: state => state.order.order.products
     })
