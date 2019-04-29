@@ -36,6 +36,7 @@ const getters = {
 
 const actions = {
   addProductToOrder({ state, getters, commit }) {
+    commit('resetErrors')
 
     // Validations
     if (isEmpty(state.product.orderId)) 
@@ -70,6 +71,9 @@ const mutations = {
   setNameCode(state, payload) {
     state.product.name = payload.name
     state.product.code = payload.code
+  },
+  resetErrors(state) {
+    state.errors = {}
   },
   setErrors(state, error) {
     state.errors = {...state.errors, ...error}

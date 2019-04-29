@@ -10,6 +10,9 @@
           <span class="input-group-text"><feather type="file-text"></feather></span>
         </div>
         <input v-model="orderId" type="text" :class="{'is-invalid': errors.orderId}" class="form-control" placeholder="Order de compra">
+        <div v-show="errors.orderId" class="invalid-feedback">
+          {{ errors.orderId }}
+        </div>
       </div>
 
       <div class="input-group mb-3">
@@ -36,14 +39,17 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><feather type="layers"></feather></span>
         </div>
-        <input v-model="quantity" type="text" :class="{'is-invalid': errors.quantity}" class="form-control" placeholder="Cantidad">
+        <input v-model="quantity" type="number" :class="{'is-invalid': errors.quantity}" class="form-control" placeholder="Cantidad">
+        <div v-show="errors.quantity" class="invalid-feedback">
+          {{ errors.quantity }}
+        </div>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text"><feather type="dollar-sign"></feather></span>
         </div>
-        <input v-model="kiloValue" type="text" class="form-control" placeholder="Valor kilo">
+        <input v-model="kiloValue" type="number" class="form-control" placeholder="Valor kilo">
       </div>
 
       <div class="input-group mb-3">
